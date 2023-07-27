@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+        header {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .about-me {
+            background-color: #f7f7f7;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            /* Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s, transform 1s;
+        }
+        .about-me h2 {
+            margin-top: 0;
+        }
+        .game {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /* Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s, transform 1s;
+        }
+        .game img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .game h2 {
+            margin-top: 0;
+        }
+        .game p {
+            color: #444;
+        }
+        .game ul {
+            list-style: disc;
+            margin-left: 2rem;
+        }
+        .game a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .game a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background-color: #8CE7F2;
+            color: #000000;
+            /* Hover effect */
+            transition: font-size 0.3s ease;
+            border-top: 2px solid #000; /* Adding a black frame to the text */
+        }
+
+        /* Animation styles */
+        .game.show,
+        .about-me.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .game.hide,
+        .about-me.hide {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Additional styles */
+        .my-games-title {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 2rem;
+        }
+
+        /* Hover effect for the contact details */
+        footer:hover {
+            font-size: 18px;
+        }
+
+        /* Hover effect for games */
+        .game:hover,
+        .about-me:hover {
+            transform: scale(1.05);
+        }
+
+        /* Enlarged logo */
+        .logo {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="מצגת1.jpg" alt="Logo">
+    </header>
+    <main>
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm Noam Amram, a passionate game developer and designer. I have a strong fascination with creating interactive and immersive gaming experiences that captivate players and transport them to new worlds. My journey in the world of game development began with a burning curiosity to understand how games are made, and since then, I've been on a thrilling adventure of learning and creating.</p>
+            <p>I believe that games have the power to entertain, educate, and inspire people of all ages, and I'm committed to pushing the boundaries of what gaming can achieve. My skill set includes game design, programming, graphics, and sound design, and I constantly strive to improve and refine my abilities with each project I undertake.</p>
+            <p>On this portfolio, you'll find a collection of some of my proudest gaming creations. Each game represents countless hours of dedication and love poured into crafting an enjoyable and memorable experience. I hope you enjoy exploring my work as much as I enjoyed making it.</p>
+            <p>If you have any questions or would like to collaborate on a project, feel free to reach out to me through the contact details provided below. Thank you for visiting!</p>
+        </div>
+
+        <hr style="margin: 2rem 0;">
+
+        <h2 class="my-games-title">My Games</h2>
+        <img src="icons8-double-down-64 (1).png" alt="My Games" style="display: block; margin: 0 auto; max-width: 300px;">
+
+        <hr style="margin: 2rem 0;">
+
+        <div class="game">
+            <img src="bathroomaLogo.png" alt="bathroomaLogo">
+            <h2>Game 1: Where's Bathrooma?</h2>
+            <p>Embark on an epic adventure in "Where's Bathrooma?". Join our hero, Bathrooma, in a quest to save the kingdom from an ancient evil. Explore mystical lands, solve challenging puzzles, and face formidable foes in this thrilling 2D platformer.</p>
+            <ul>
+                <li>Stunning hand-drawn graphics and animations.</li>
+                <li>Engaging storyline with multiple endings based on player choices.</li>
+                <li>Intuitive controls and smooth gameplay for an immersive experience.</li>
+                <li>Original musical score that enhances the game's atmosphere.</li>
+            </ul>
+            <p>Play it <a href="https://noamamram.github.io/wheresBathroomaVol2-0.1/" target="_blank">here</a>.</p>
+        </div>
+
+        <div class="game">
+            <img src="game2Logo.png" alt="Game 2">
+            <h2>Game 2: Space Defender</h2>
+            <p>Defend Earth from an alien invasion in "Space Defender". Pilot your advanced spaceship and engage in intense shoot 'em up action as you battle waves of enemy ships. Upgrade your ship and unleash powerful abilities to save humanity!</p>
+            <ul>
+                <li>High-octane action with responsive controls for an adrenaline-pumping experience.</li>
+                <li>Multiple ship customization options and weapons to suit different playstyles.</li>
+                <li>Challenging boss battles that put your skills to the test.</li>
+                <li>Global leaderboard to compete with players worldwide.</li>
+            </ul>
+            <p>Play it <a href="#" target="_blank">here</a>.</p>
+        </div>
+
+        <!-- Add more game entries as needed -->
+
+    </main>
+    <footer>
+        <p>Contact me at: <a href="mailto:noamamram10@gmail.com" style="color: #007BFF;">noamamram10@gmail.com</a> | Phone: <a href="tel:+972525915978" style="color: #007BFF;">052-5915978</a> | LinkedIn:</p>
+    </footer>
+
+    <script>
+        // JavaScript to add the 'show' and 'hide' classes to games and about-me section when scrolled into view or out of view
+        document.addEventListener("DOMContentLoaded", function() {
+            const gamesAndAboutMe = document.querySelectorAll(".game, .about-me");
+            const triggerBottom = window.innerHeight * 0.8;
+            let lastScrollTop = 0;
+            let atTop = true;
+
+            function showGamesAndAboutMe() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
+                lastScrollTop = scrollTop;
+
+                // Check if at the top of the page
+                if (scrollTop === 0) {
+                    atTop = true;
+                } else {
+                    atTop = false;
+                }
+
+                gamesAndAboutMe.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < triggerBottom) {
+                        if (!atTop) {
+                            element.classList.add("show");
+                            element.classList.remove("hide");
+                        } else {
+                            element.classList.add("hide");
+                            element.classList.remove("show");
+                        }
+                    }
+                });
+            }
+
+            showGamesAndAboutMe();
+
+            document.addEventListener("scroll", showGamesAndAboutMe);
+        });
+    </script>
+</body>
+</html>
