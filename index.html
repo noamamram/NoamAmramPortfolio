@@ -13,6 +13,7 @@
             padding: 0;
             background-color: #ffffff;
         }
+        
         header {
         }
         main {
@@ -119,12 +120,46 @@
         .logo {
             width: 100%;
         }
+        .header-container {
+            position: relative;
+            background: url('תמונה1.png') center/cover no-repeat;
+            height: 300px; /* Adjust the height as needed */
+        }
+
+        .header-text {
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-subtext {
+            position: absolute;
+            top: 80%; /* Adjust the position of the subtext as needed */
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
 
     </style>
 </head>
 <body>
     <header>
-        <img class="logo" src="upLogo.png" alt="Logo">
+        <div class="header-container">
+
+            <div class="header-text">Game_Portfolio</div>
+            <div class="header-subtext">Noam_Amram</div>
+
+        </div>
 
         <img src="icons8-down-arrow.gif" alt="My Games" style="display: block; margin: 0 auto; max-width: 300px;">
 
