@@ -33,9 +33,9 @@
 
        
         .header-nav a {
-    margin: 0 35px; /* Add margin to create space between links */
-    color: #007BFF;
-    text-decoration: none;
+            margin: 0 35px; /* Add margin to create space between links */
+            color: #007BFF;
+            text-decoration: none;
 }
         .header-nav a:hover {
             text-decoration: underline;
@@ -166,23 +166,26 @@
         .carousel-button.right {
             right: 10px;
         }
-        .video-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Change height to 100vh to take up the full viewport height */
-    overflow: hidden;
-}
 
-.video-wrapper {
-    max-width: 80%; /* Adjust max-width as needed */
-    max-height: 80vh; /* Adjust max-height as needed */
-    margin: 0 auto; /* Center the video horizontally */
-}
-/* Add a max-height to limit the video height if needed */
-.video-wrapper iframe {
-    max-height: 80vh; /* Adjust the value as needed */
-}
+        .video-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Change height to 100vh to take up the full viewport height */
+            overflow: hidden;
+        }
+
+
+        .video-wrapper {
+            max-width: 80%; /* Adjust max-width as needed */
+            max-height: 80vh; /* Adjust max-height as needed */
+            margin: 0 auto; /* Center the video horizontally */
+        }
+
+        /* Add a max-height to limit the video height if needed */
+        .video-wrapper iframe {
+            max-height: 80vh; /* Adjust the value as needed */
+        }
 
         .play-button {
             display: flex;
@@ -332,6 +335,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/AoO9dDuipFE" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
+            
             <div class="play-button">
                 <p>Click the play button from your computer:</p>
             </div>
