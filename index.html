@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Portfolio</title>
     <style>
+      #fixed-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align the links */
+    margin: 0; /* Remove margin */
+}
+
+#fixed-nav a {
+    margin: 0; /* Remove margin */
+    padding: 10px 20px; /* Add padding for spacing */
+    color: #007BFF;
+    text-decoration: none;
+}
+.header-nav {
+            display: flex;
+            justify-content: center; /* Center-align the links horizontally */
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+       
+        .header-nav a {
+    margin: 0 50px; /* Add margin to create space between links */
+    color: #007BFF;
+    text-decoration: none;
+}
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -183,7 +219,7 @@
         }
 
         .header-subtext {
-            top: 80%;
+            top:120%;
         }
 
         .header-button-container {
@@ -214,16 +250,42 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="header-text">Game_Portfolio</div>
-            <div class="header-subtext">Noam_Amram</div>
+            <div class="header-text">
+                Game Portfolio
+                <nav class="header-nav">
+                    <a href="mailto:noamamram10@gmail.com" style="color: #007BFF;">
+                        <img src="icons8-mail-50.png" alt="Email"> 
+                    </a>
+                    <a href="tel:+972525915978" style="color: #007BFF;">
+                        <img src="icons8-phone-50.png" alt="Phone"> 
+                    </a>
+                    <a href="https://www.canva.com/design/DAFqSNo4lBw/5AOrh8hxz-UwOlJZvwGC4g/view?utm_content=DAFqSNo4lBw&utm_campaign=celebratory_first_publish&utm_medium=link&utm_source=celebratory_first_publish" style="color: #007BFF;">
+                        <img src="icons8-document-50.png" alt="CV"> 
+                    </a>
+                    <a href="https://www.linkedin.com/in/noam-amram-a2053b237/" style="color: #007BFF;">
+                        <img src="icons8-linkedin-50.png" alt="LinkedIn"> 
+                    </a>
+                </nav>
+
+                <div class="header-subtext">Noam Amram</div>
+
+            </div>
         </div>
         <img src="icons8-down-arrow.gif" alt="My Games" style="display: block; margin: 0 auto; max-width: 300px;">
         <hr style="margin: 2rem 0;">
-        <h2 class="my-games-title">About Me</h2>
+        <h2 class="my-games-title" id="about-me">About Me</h2>
         <hr style="margin: 2rem 0;">
     </header>
+    
+    
 
     <main>
+        <div id="fixed-nav" class="header-nav">
+            <a href="mailto:noamamram10@gmail.com" style="color: #007BFF;">Email: noamamram10@gmail.com</a>
+            <a href="tel:+972525915978" style="color: #007BFF;"> Phone: 0525915978</a>
+            <a href="https://www.canva.com/design/DAFqSNo4lBw/5AOrh8hxz-UwOlJZvwGC4g/view?utm_content=DAFqSNo4lBw&utm_campaign=celebratory_first_publish&utm_medium=link&utm_source=celebratory_first_publish" style="color: #007BFF;"> my CV</a>
+            <a href="https://www.linkedin.com/in/noam-amram-a2053b237/" style="color: #007BFF;">my LinkedIn</a>
+        </div>
         <div class="about-me">
             <p>Hello! I'm Noam Amram, a passionate game developer and designer. I have a strong fascination with creating interactive and immersive gaming experiences that captivate players and transport them to new worlds. My journey in the world of game development began with a burning curiosity to understand how games are made, and since then, I've been on a thrilling adventure of learning and creating.</p>
             <p>I believe that games have the power to entertain, educate, and inspire people of all ages, and I'm committed to pushing the boundaries of what gaming can achieve. My skill set includes game design, programming, graphics, and sound design, and I constantly strive to improve and refine my abilities with each project I undertake.</p>
@@ -300,11 +362,19 @@
         </div>
     </main>
 
-    <footer>
-        <p>Contact me at: <a href="mailto:noamamram10@gmail.com" style="color: #007BFF;">noamamram10@gmail.com</a> | Phone: <a href="tel:+972525915978" style="color: #007BFF;">052-5915978</a> <br>LinkedIn: <a href="https://www.linkedin.com/in/noam-amram-a2053b237/" style="color: #007BFF;">Noam Amram</a> | CV: <a href="https://www.canva.com/design/DAFqSNo4lBw/5AOrh8hxz-UwOlJZvwGC4g/view?utm_content=DAFqSNo4lBw&utm_campaign=celebratory_first_publish&utm_medium=link&utm_source=celebratory_first_publish" style="color: #007BFF;">My CV</a></p>
-    </footer>
+    
 
     <script>
+        const fixedNav = document.getElementById("fixed-nav");
+        const header = document.querySelector("header");
+
+        document.addEventListener("scroll", function() {
+            if (window.scrollY > header.offsetHeight-600) {
+                fixedNav.style.display = "block";
+            } else {
+                fixedNav.style.display = "none";
+            }
+        });
         let currentIndex1 = 0;
 
         function nextSlide(carouselId) {
