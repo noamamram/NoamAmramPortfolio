@@ -166,17 +166,23 @@
         .carousel-button.right {
             right: 10px;
         }
-
         .video-carousel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Change to auto to adjust height dynamically */
+    overflow: hidden; /* Hide any overflow */
+}
+.video-wrapper {
+    width: 100%; /* Set width to 100% */
+    max-width: 100%; /* Ensure the video doesn't overflow its container */
+    margin: 0; /* Remove any margin */
+}
 
-        .video-wrapper {
-            max-width: 100%;
-        }
+/* Add a max-height to limit the video height if needed */
+.video-wrapper iframe {
+    max-height: 80vh; /* Adjust the value as needed */
+}
 
         .play-button {
             display: flex;
