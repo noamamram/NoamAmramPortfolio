@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Portfolio</title>
     <style>
-        @media (max-width: 768px) {
-    .header-nav {
-        flex-direction: column; /* Stack links vertically */
-        text-align: center; /* Center-align the links */
-    }
-
-    .header-nav a {
-        margin: 10px 0; /* Add margin to create space between links */
-    }
-}
       #fixed-nav {
     display: none;
     position: fixed;
@@ -35,14 +25,15 @@
     text-decoration: none;
 }
 .header-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
+            display: flex;
+            justify-content: center; /* Center-align the links horizontally */
+            align-items: center;
+            margin-top: 1rem;
+        }
 
-.header-nav a {
-    margin: 0 15px; /* Adjust the margin for smaller screens */
+       
+        .header-nav a {
+    margin: 0 35px; /* Add margin to create space between links */
     color: #007BFF;
     text-decoration: none;
 }
