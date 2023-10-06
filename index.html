@@ -167,32 +167,32 @@
             right: 10px;
         }
 
-        .video-carousel {
+       /* Modify the CSS for video-carousel and video-wrapper */
+.video-carousel {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Change height to 100vh to take up the full viewport height */
+    height: 100%; /* Set the height to 100% */
     overflow: hidden;
-    position: relative; /* Add position: relative; */
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
-
-
 
 .video-wrapper {
     max-width: 100%;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-    position: relative; /* Add position: relative; */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%; /* Set the height to 100% */
 }
 
-
-        /* Add a max-height to limit the video height if needed */
-        .video-wrapper iframe {
-            max-height: 50vh; /* Adjust the value to make the video smaller */
-    width: 100%; /* Make the video responsive */
+/* Add a max-height to limit the video height if needed */
+.video-wrapper iframe {
+    max-height: 100%; /* Adjust the value if needed */
+    width: 100%;
 }
+
 @media screen and (max-width: 768px) {
     .video-wrapper iframe {
         max-height: 30vh; /* Adjust the value for smaller screens */
@@ -341,11 +341,13 @@
                 <button class="carousel-button right" onclick="nextSlide('carousel1')">&#9654;</button>
             </div>
 
-            <div class="video-carousel">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AoO9dDuipFE" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
+           <!-- Modify the video-carousel and video-wrapper as follows -->
+<div class="video-carousel">
+    <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AoO9dDuipFE" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
             
             <div class="play-button">
                 <p>Click the play button from your computer:</p>
