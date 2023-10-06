@@ -168,25 +168,33 @@
         }
 
         .video-carousel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Change height to 100vh to take up the full viewport height */
-            overflow: hidden;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Change height to 100vh to take up the full viewport height */
+    overflow: hidden;
+    position: relative; /* Add position: relative; */
+}
 
 
-        .video-wrapper {
-            max-width: 80%; /* Adjust max-width as needed */
-            max-height: 80vh; /* Adjust max-height as needed */
-            margin: 0 auto; /* Center the video horizontally */
-        }
+
+.video-wrapper {
+    max-width: 100%;
+    margin: 0 auto; /* Center the video horizontally */
+    position: relative; /* Add position: relative; */
+}
+
 
         /* Add a max-height to limit the video height if needed */
         .video-wrapper iframe {
-            max-height: 80vh; /* Adjust the value as needed */
-        }
-
+    max-height: 80vh; /* Adjust the value as needed */
+    width: 100%; /* Make the video responsive */
+}
+@media screen and (max-width: 768px) {
+    .video-wrapper iframe {
+        max-height: 50vh; /* Adjust the value as needed for smaller screens */
+    }
+    }
         .play-button {
             display: flex;
             justify-content: center;
