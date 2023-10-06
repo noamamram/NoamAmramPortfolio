@@ -174,27 +174,30 @@
     height: 100vh; /* Change height to 100vh to take up the full viewport height */
     overflow: hidden;
     position: relative; /* Add position: relative; */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
 }
 
 
 
 .video-wrapper {
     max-width: 100%;
-    margin: 0 auto; /* Center the video horizontally */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
     position: relative; /* Add position: relative; */
 }
 
 
         /* Add a max-height to limit the video height if needed */
         .video-wrapper iframe {
-    max-height: 80vh; /* Adjust the value as needed */
+            max-height: 50vh; /* Adjust the value to make the video smaller */
     width: 100%; /* Make the video responsive */
 }
 @media screen and (max-width: 768px) {
     .video-wrapper iframe {
-        max-height: 50vh; /* Adjust the value as needed for smaller screens */
+        max-height: 30vh; /* Adjust the value for smaller screens */
     }
-    }
+}
         .play-button {
             display: flex;
             justify-content: center;
