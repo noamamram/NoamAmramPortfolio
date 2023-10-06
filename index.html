@@ -170,15 +170,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto; /* Change to auto to adjust height dynamically */
-    overflow: hidden; /* Hide any overflow */
-}
-.video-wrapper {
-    width: 100%; /* Set width to 100% */
-    max-width: 100%; /* Ensure the video doesn't overflow its container */
-    margin: 0; /* Remove any margin */
+    height: 100vh; /* Change height to 100vh to take up the full viewport height */
+    overflow: hidden;
 }
 
+.video-wrapper {
+    max-width: 80%; /* Adjust max-width as needed */
+    max-height: 80vh; /* Adjust max-height as needed */
+    margin: 0 auto; /* Center the video horizontally */
+}
 /* Add a max-height to limit the video height if needed */
 .video-wrapper iframe {
     max-height: 80vh; /* Adjust the value as needed */
