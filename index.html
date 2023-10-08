@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Portfolio</title>
     <style>
+        /* Add this CSS code to your existing <style> section in your HTML file */
+
+            .slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slideshow {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
       #fixed-nav {
     display: none;
     position: fixed;
@@ -132,41 +175,7 @@
             font-size: 48px;
             margin-top: 2rem;
         }
-
-        .carousel-container {
-            position: relative;
-            max-width: 100%;
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-
-        .carousel-button {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            position: absolute;
-            top: 50%;
-        }
-
-        .carousel-button.left {
-            left: 10px;
-            z-index: 1;
-        }
-
-        .carousel-button.right {
-            right: 10px;
-        }
-
+       
        /* Modify the CSS for video-carousel and video-wrapper */
 .video-carousel {
     display: flex;
@@ -321,26 +330,18 @@
             <h2>Game 1: Where's Bathrooma?</h2>
             <img src="bathroomaLogo.png" alt="bathroomaLogo">
             <p>Welcome to the quirky and adventurous world of 'Where's Bathrooma?'! Step into the shoes of our protagonist, Bathrooman, a clever play on words for the man from the bathroom sign. In this captivating game, players embark on a thrilling journey through a series of challenging levels, each featuring a 3D, life-sized bathroom meticulously crafted in Blender. The objective is to locate Bathrooma, a clever twist on the woman from the bathroom sign, who somehow finds herself lost in this puzzling bathroom. As the player explores the intricately designed bathroom, they must use their wits to solve puzzles, decipher clues, and unravel hidden secrets, much like navigating an escape room. 'Where's Bathrooma?' promises an exciting and humor-filled experience, encouraging players to put their detective skills to the test and reunite Bathrooman with his counterpart, Bathrooma, in an unforgettable virtual escapade.</p>
-
-            <div class="carousel-container">
-                <button class="carousel-button left" onclick="prevSlide('carousel1')">&#9664;</button>
-                <div class="carousel" id="carousel1">
-                    <div class="carousel-item">
-                        <img src="צילום מסך 2023-09-11 203237.png" alt="Screenshot 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="צילום מסך 2023-09-11 203336.png" alt="Screenshot 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="צילום מסך 2023-09-11 204248.png" alt="Screenshot 3">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="צילום מסך 2023-09-11 204801.png" alt="Screenshot 4">
-                    </div>
+            <div class="slideshow-container">
+                <div class="slideshow">
+                    <img src="צילום מסך 2023-09-11 203237.png" alt="Image 1" class="slide">
+                    <img src="צילום מסך 2023-09-11 203336.png" alt="Image 2" class="slide">
+                    <img src="צילום מסך 2023-09-11 204248.png" alt="Image 3" class="slide">
+                    <img src="צילום מסך 2023-09-11 204801.png" alt="Image 4" class="slide">
                 </div>
-                <button class="carousel-button right" onclick="nextSlide('carousel1')">&#9654;</button>
+                <a class="prev" onclick="prevSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
+        
            <!-- Modify the video-carousel and video-wrapper as follows -->
 <div class="video-carousel">
     <div class="video-wrapper">
@@ -371,73 +372,58 @@
     
 
     <script>
-        const fixedNav = document.getElementById("fixed-nav");
+       const fixedNav = document.getElementById("fixed-nav");
         const header = document.querySelector("header");
-
-        document.addEventListener("scroll", function() {
-            if (window.scrollY > header.offsetHeight-600) {
+    
+        document.addEventListener("scroll", function () {
+            if (window.scrollY > header.offsetHeight - 600) {
                 fixedNav.style.display = "block";
             } else {
                 fixedNav.style.display = "none";
             }
         });
-        let currentIndex1 = 0;
+    
+        
 
-        function nextSlide(carouselId) {
-            if (carouselId === 'carousel1') {
-                currentIndex1 = (currentIndex1 + 1) % document.querySelectorAll('#carousel1 .carousel-item').length;
-                updateCarousel('carousel1', currentIndex1);
-            }
-        }
+      // Remove the previous carousel-related JavaScript code
+      let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
-        function prevSlide(carouselId) {
-            if (carouselId === 'carousel1') {
-                currentIndex1 = (currentIndex1 - 1 + document.querySelectorAll('#carousel1 .carousel-item').length) % document.querySelectorAll('#carousel1 .carousel-item').length;
-                updateCarousel('carousel1', currentIndex1);
-            }
-        }
+function showSlide(n) {
+    slides[currentSlide].style.display = 'none';
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].style.display = 'block';
+}
 
-        function updateCarousel(carouselId, currentIndex) {
-            const carouselInner = document.querySelector(`#${carouselId}`);
-            const slideWidth = document.querySelector(`#${carouselId} .carousel-item`).offsetWidth;
-            const translateX = -(currentIndex * slideWidth);
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
 
-            // Calculate the translateX to center the current image
-            const centerTranslateX = translateX + (carouselInner.offsetWidth / 2 - slideWidth / 2);
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
 
-            // Hide all images first
-            document.querySelectorAll(`#${carouselId} .carousel-item`).forEach(item => {
-                item.style.opacity = 0;
-            });
+showSlide(currentSlide);
 
-            // Show the current image
-            const currentImage = document.querySelector(`#${carouselId} .carousel-item:nth-child(${currentIndex + 1})`);
-            currentImage.style.opacity = 1;
 
-            carouselInner.style.transform = `translateX(${centerTranslateX}px)`;
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            updateCarousel("carousel1", currentIndex1);
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
+    
+        document.addEventListener("DOMContentLoaded", function () {
             const gamesAndAboutMe = document.querySelectorAll(".game, .about-me");
             const triggerBottom = window.innerHeight * 0.8;
             let lastScrollTop = 0;
             let atTop = true;
-
+    
             function showGamesAndAboutMe() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
                 lastScrollTop = scrollTop;
-
+    
                 if (scrollTop === 0) {
                     atTop = true;
                 } else {
                     atTop = false;
                 }
-
+    
                 gamesAndAboutMe.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
                     if (elementTop < triggerBottom) {
@@ -451,11 +437,12 @@
                     }
                 });
             }
-
+    
             showGamesAndAboutMe();
-
+    
             document.addEventListener("scroll", showGamesAndAboutMe);
         });
     </script>
+    
 </body>
 </html>
