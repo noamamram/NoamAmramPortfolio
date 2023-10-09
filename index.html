@@ -8,59 +8,46 @@
         /* Add this CSS code to your existing <style> section in your HTML file */
 
             .slideshow-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.slideshow {
-    display: flex;
-    overflow: hidden;
-}
+        .slideshow {
+            display: flex;
+            overflow: hidden;
+        }
 
-.slide {
-    width: 100%;
-    display: none;
-}
+        .slide {
+            width: 100%;
+            display: none;
+        }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-}
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
 
-.prev {
-    left: 0;
-}
+        .prev {
+            left: 0;
+        }
 
-.next {
-    right: 0;
-}
+        .next {
+            right: 0;
+        }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-      #fixed-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center-align the links */
-    margin: 0; /* Remove margin */
-}
-
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 #fixed-nav a {
     margin: 0; /* Remove margin */
     padding: 10px 20px; /* Add padding for spacing */
@@ -274,6 +261,36 @@
             background-color: #0056b3;
         }
 
+
+        .prev-game1, .next-game1, .prev-game2, .next-game2 {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+
+        .prev-game1 {
+            left: 0;
+        }
+
+        .next-game1 {
+            right: 0;
+        }
+
+        .prev-game2 {
+            left: 0;
+        }
+
+        .next-game2 {
+            right: 0;
+        }
     </style>
 </head>
 <body>
@@ -315,7 +332,7 @@
             <a href="https://www.canva.com/design/DAFwd5Sskpw/J4uZ6xVFQogM99MGVFxBRA/view?utm_content=DAFwd5Sskpw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" style="color: #007BFF;"> my CV</a>
             <a href="https://www.linkedin.com/in/noam-amram-a2053b237/" style="color: #007BFF;">my LinkedIn</a>
         </div>
-        <div class="about-me">
+        <div class="about-me hide">
             <p>Hello! I'm Noam Amram, a passionate game developer and designer. I have a strong fascination with creating interactive and immersive gaming experiences that captivate players and transport them to new worlds. My journey in the world of game development began with a burning curiosity to understand how games are made, and since then, I've been on a thrilling adventure of learning and creating.</p>
             <p>I believe that games have the power to entertain, educate, and inspire people of all ages, and I'm committed to pushing the boundaries of what gaming can achieve. My skill set includes game design, programming, graphics, and sound design, and I constantly strive to improve and refine my abilities with each project I undertake.</p>
             <p>On this portfolio, you'll find a collection of some of my proudest gaming creations. Each game represents countless hours of dedication and love poured into crafting an enjoyable and memorable experience. I hope you enjoy exploring my work as much as I enjoyed making it.</p>
@@ -326,28 +343,27 @@
         <h2 class="my-games-title">My Games</h2>
         <hr style="margin: 2rem 0;">
 
-        <div class="game">
+        <div class="game hide">
             <h2>Game 1: Where's Bathrooma?</h2>
             <img src="bathroomaLogo.png" alt="bathroomaLogo">
             <p>Welcome to the quirky and adventurous world of 'Where's Bathrooma?'! Step into the shoes of our protagonist, Bathrooman, a clever play on words for the man from the bathroom sign. In this captivating game, players embark on a thrilling journey through a series of challenging levels, each featuring a 3D, life-sized bathroom meticulously crafted in Blender. The objective is to locate Bathrooma, a clever twist on the woman from the bathroom sign, who somehow finds herself lost in this puzzling bathroom. As the player explores the intricately designed bathroom, they must use their wits to solve puzzles, decipher clues, and unravel hidden secrets, much like navigating an escape room. 'Where's Bathrooma?' promises an exciting and humor-filled experience, encouraging players to put their detective skills to the test and reunite Bathrooman with his counterpart, Bathrooma, in an unforgettable virtual escapade.</p>
-            <div class="slideshow-container">
+            <div class="slideshow-container" id="slideshow-container-game1">
                 <div class="slideshow">
                     <img src="צילום מסך 2023-09-11 203237.png" alt="Image 1" class="slide">
                     <img src="צילום מסך 2023-09-11 203336.png" alt="Image 2" class="slide">
                     <img src="צילום מסך 2023-09-11 204248.png" alt="Image 3" class="slide">
                     <img src="צילום מסך 2023-09-11 204801.png" alt="Image 4" class="slide">
                 </div>
-                <a class="prev" onclick="prevSlide()">&#10094;</a>
-                <a class="next" onclick="nextSlide()">&#10095;</a>
+                <a class="prev prev-game1" onclick="prevSlideGame1()">&#10094;</a>
+                <a class="next next-game1" onclick="nextSlideGame1()">&#10095;</a>
             </div>
-
         
            <!-- Modify the video-carousel and video-wrapper as follows -->
-<div class="video-carousel">
     <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/AoO9dDuipFE" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
+
 
             
             <div class="play-button">
@@ -360,88 +376,114 @@
             </div>
         </div>
 
-        <div class="game">
+        <div class="game hide">
             <h2>Game 2: VRange</h2>
             <img src="vrrangeLogo.png" alt="vrrangeLogo">
             <p>Welcome to the adrenaline-pumping virtual world of "VRange," a clever play on words for a VR shoot range simulator! Immerse yourself in the ultimate shooting experience, as this game takes realistic shooting to a whole new level. Step into the virtual range room, thoughtfully designed using Blender software, and get ready for the action. The game offers a wide array of authentic mechanics, requiring players to perform lifelike actions to fire their weapons. You'll have to move the weapon to a single position, insert cartridges, and even pull the charging handle and then brace for a steady shot, just like in reality. Your mission is to hit the targets as accurately and swiftly as possible within the intense 2-minute time limit. Challenge yourself to achieve the highest score and sharpen your shooting skills. If you seek more casual fun, "VRange" offers a "free play" mode, where you can practice shooting at a variety of entertaining objects. Get your VR headset on and prepare for an exhilarating shooting adventure like never before!</p>
-
-       
+            <div class="slideshow-container" id="slideshow-container-game2">
+                <div class="slideshow">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.00.51.png" alt="VRange Image 1" class="slide">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.02.06.png" alt="VRange Image 2" class="slide">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.02.20.png" alt="VRange Image 3" class="slide">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.02.45.png" alt="VRange Image 4" class="slide">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.03.01.png" alt="VRange Image 5" class="slide">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.03.27.png" alt="VRange Image 6" class="slide">
+                    <img src="vrrangePhotos/צילום מסך 2023-10-09 ב-1.03.40.png" alt="VRange Image 7" class="slide">
+                </div>
+                <a class="prev prev-game2" onclick="prevSlideGame2()">&#10094;</a>
+                <a class="next next-game2" onclick="nextSlideGame2()">&#10095;</a>
+            </div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9SfrvZ9MgfY" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </main>
 
     
 
     <script>
-       const fixedNav = document.getElementById("fixed-nav");
-        const header = document.querySelector("header");
-    
-        document.addEventListener("scroll", function () {
-            if (window.scrollY > header.offsetHeight - 600) {
-                fixedNav.style.display = "block";
-            } else {
-                fixedNav.style.display = "none";
-            }
-        });
-    
-        
+document.addEventListener("DOMContentLoaded", function () {
+    const gamesAndAboutMe = document.querySelectorAll(".game, .about-me");
+    const triggerBottom = window.innerHeight * 0.8;
+    let lastScrollTop = 0;
+    let atTop = true;
 
-      // Remove the previous carousel-related JavaScript code
-      let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+    function showGamesAndAboutMe() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
+        lastScrollTop = scrollTop;
 
-function showSlide(n) {
-    slides[currentSlide].style.display = 'none';
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].style.display = 'block';
-}
+        if (scrollTop === 0) {
+            atTop = true;
+        } else {
+            atTop = false;
+        }
 
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-showSlide(currentSlide);
-
-
-    
-        document.addEventListener("DOMContentLoaded", function () {
-            const gamesAndAboutMe = document.querySelectorAll(".game, .about-me");
-            const triggerBottom = window.innerHeight * 0.8;
-            let lastScrollTop = 0;
-            let atTop = true;
-    
-            function showGamesAndAboutMe() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
-                lastScrollTop = scrollTop;
-    
-                if (scrollTop === 0) {
-                    atTop = true;
+        gamesAndAboutMe.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < triggerBottom) {
+                if (!atTop) {
+                    element.classList.add("show");
+                    element.classList.remove("hide");
                 } else {
-                    atTop = false;
+                    element.classList.add("hide");
+                    element.classList.remove("show");
                 }
-    
-                gamesAndAboutMe.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    if (elementTop < triggerBottom) {
-                        if (!atTop) {
-                            element.classList.add("show");
-                            element.classList.remove("hide");
-                        } else {
-                            element.classList.add("hide");
-                            element.classList.remove("show");
-                        }
-                    }
-                });
             }
-    
-            showGamesAndAboutMe();
-    
-            document.addEventListener("scroll", showGamesAndAboutMe);
         });
+    }
+
+    showGamesAndAboutMe();
+
+    document.addEventListener("scroll", showGamesAndAboutMe);
+});
+
+// Slideshow functions for Game 1
+function showSlideGame1(n) {
+    slidesGame1[currentSlideGame1].style.display = "none";
+    currentSlideGame1 = (n + slidesGame1.length) % slidesGame1.length;
+    slidesGame1[currentSlideGame1].style.display = "block";
+}
+
+function prevSlideGame1() {
+    showSlideGame1(currentSlideGame1 - 1);
+}
+
+function nextSlideGame1() {
+    showSlideGame1(currentSlideGame1 + 1);
+}
+
+// Slideshow functions for Game 2
+function showSlideGame2(n) {
+    slidesGame2[currentSlideGame2].style.display = "none";
+    currentSlideGame2 = (n + slidesGame2.length) % slidesGame2.length;
+    slidesGame2[currentSlideGame2].style.display = "block";
+}
+
+function prevSlideGame2() {
+    showSlideGame2(currentSlideGame2 - 1);
+}
+
+function nextSlideGame2() {
+    showSlideGame2(currentSlideGame2 + 1);
+}
+
+// Initialize variables for both carousels
+let currentSlideGame1 = 0;
+const slidesGame1 = document.querySelectorAll("#slideshow-container-game1 .slide");
+let currentSlideGame2 = 0;
+const slidesGame2 = document.querySelectorAll("#slideshow-container-game2 .slide");
+
+// Add event listeners for prev and next buttons for each game's carousel
+document.querySelector(".prev-game1").addEventListener("click", prevSlideGame1);
+document.querySelector(".next-game1").addEventListener("click", nextSlideGame1);
+document.querySelector(".prev-game2").addEventListener("click", prevSlideGame2);
+document.querySelector(".next-game2").addEventListener("click", nextSlideGame2);
+
+// Initialize the first slide for both carousels
+showSlideGame1(currentSlideGame1);
+showSlideGame2(currentSlideGame2);
+
     </script>
     
 </body>
