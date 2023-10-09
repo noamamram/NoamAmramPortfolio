@@ -7,6 +7,22 @@
     <style>
         /* Add this CSS code to your existing <style> section in your HTML file */
 
+            #fixed-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff; /* Add your desired background color */
+    z-index: 1000; /* Ensure it's above other elements */
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Adjust as needed */
+    width: 100%;
+    padding: 10px 0; /* Add padding for spacing */
+    opacity: 0; /* Initially hide the links */
+    transition: opacity 0.5s ease; /* Add a transition effect */
+}
+
+
             .slideshow-container {
             position: relative;
             max-width: 800px;
@@ -317,21 +333,41 @@
 
             </div>
         </div>
+
         <img src="icons8-down-arrow.gif" alt="My Games" style="display: block; margin: 0 auto; max-width: 300px;">
-        <hr style="margin: 2rem 0;">
-        <h2 class="my-games-title" id="about-me">About Me</h2>
-        <hr style="margin: 2rem 0;">
+      
     </header>
+    <div id="fixed-links">
+        <a href="mailto:noamamram10@gmail.com" style="color: #007BFF;">
+            <img src="icons8-mail-50.png" alt="Email"> 
+        </a>
+        <a href="tel:+972525915978" style="color: #007BFF;">
+            <img src="icons8-phone-50.png" alt="Phone"> 
+        </a>
+        <a href="https://www.canva.com/design/DAFwd5Sskpw/J4uZ6xVFQogM99MGVFxBRA/view?utm_content=DAFwd5Sskpw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" style="color: #007BFF;">
+            <img src="icons8-document-50.png" alt="CV"> 
+        </a>
+        <a href="https://www.linkedin.com/in/noam-amram-a2053b237/" style="color: #007BFF;">
+            <img src="icons8-linkedin-50.png" alt="LinkedIn"> 
+        </a>
+    </div>
+
+    <div id="header-links" class="header-nav">
+    </div>
+    
     
     
 
     <main>
+
+
+
         <div id="fixed-nav" class="header-nav">
-            <a href="mailto:noamamram10@gmail.com" style="color: #007BFF;">Email: noamamram10@gmail.com</a>
-            <a href="tel:+972525915978" style="color: #007BFF;"> Phone: 0525915978</a>
-            <a href="https://www.canva.com/design/DAFwd5Sskpw/J4uZ6xVFQogM99MGVFxBRA/view?utm_content=DAFwd5Sskpw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" style="color: #007BFF;"> my CV</a>
-            <a href="https://www.linkedin.com/in/noam-amram-a2053b237/" style="color: #007BFF;">my LinkedIn</a>
+           
         </div>
+        <hr style="margin: 2rem 0;">
+        <h2 class="my-games-title" id="about-me">About Me</h2>
+        <hr style="margin: 2rem 0;">
         <div class="about-me hide">
             <p>Hello! I'm Noam Amram, a passionate game developer and designer. I have a strong fascination with creating interactive and immersive gaming experiences that captivate players and transport them to new worlds. My journey in the world of game development began with a burning curiosity to understand how games are made, and since then, I've been on a thrilling adventure of learning and creating.</p>
             <p>I believe that games have the power to entertain, educate, and inspire people of all ages, and I'm committed to pushing the boundaries of what gaming can achieve. My skill set includes game design, programming, graphics, and sound design, and I constantly strive to improve and refine my abilities with each project I undertake.</p>
@@ -359,10 +395,9 @@
             </div>
         
            <!-- Modify the video-carousel and video-wrapper as follows -->
-    <div class="video-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AoO9dDuipFE" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AoO9dDuipFE" frameborder="0" allowfullscreen></iframe>
+            </div>
 
 
             
@@ -402,9 +437,13 @@
     
 
     <script>
+
 document.addEventListener("DOMContentLoaded", function () {
     const gamesAndAboutMe = document.querySelectorAll(".game, .about-me");
     const triggerBottom = window.innerHeight * 0.8;
+    const fixedNav = document.getElementById("fixed-nav");
+    const headerLinks = document.getElementById("header-links");
+    const fixedLinks = document.getElementById("fixed-links");
     let lastScrollTop = 0;
     let atTop = true;
 
@@ -415,8 +454,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (scrollTop === 0) {
             atTop = true;
+            fixedNav.style.display = "none";
+            headerLinks.style.display = "none";
+            fixedLinks.style.opacity = 0; // Hide the links at the top
         } else {
             atTop = false;
+            fixedNav.style.display = "block";
+            if (scrollDirection === "down") {
+                headerLinks.style.display = "block";
+            } else {
+                headerLinks.style.display = "none";
+                fixedLinks.style.opacity = 0; // Hide the links when scrolling up
+            }
         }
 
         gamesAndAboutMe.forEach(element => {
@@ -425,9 +474,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!atTop) {
                     element.classList.add("show");
                     element.classList.remove("hide");
+                    fixedLinks.style.opacity = 1; // Show the links when elements are visible
                 } else {
                     element.classList.add("hide");
                     element.classList.remove("show");
+                    fixedLinks.style.opacity = 0; // Hide the links when at the top
                 }
             }
         });
@@ -437,6 +488,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("scroll", showGamesAndAboutMe);
 });
+
+
+
 
 // Slideshow functions for Game 1
 function showSlideGame1(n) {
