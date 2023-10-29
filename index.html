@@ -278,7 +278,7 @@
         }
 
 
-        .prev-game1, .next-game1, .prev-game2, .next-game2 {
+        .prev-game1, .next-game1, .prev-game2, .next-game2, .prev-game3, .next-game3 {
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -305,6 +305,13 @@
         }
 
         .next-game2 {
+            right: 0;
+        }
+        .prev-game3 {
+            left: 0;
+        }
+
+        .next-game3 {
             right: 0;
         }
     </style>
@@ -431,6 +438,34 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/u9o97rLCN6w" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
+
+        <div class="game hide">
+            <h2>Game 3: The Reactor Attack</h2>
+            <img src="Opera_operation.png" alt="reactorattackLogo" width=100%>
+            <p>Welcome to the new VR simulator that replicates the events of the Israeli attack on the nuclear reactor in Iraq. In this immersive simulation, you step into the cockpit of an Israeli pilot on this historic mission. Your mission begins as you take off and embark on a flight towards the target – the nuclear reactor in Iraq. The simulation meticulously recreates the flight path and the details of the attack, providing an in-depth experience that focuses on various elements. The simulation is developed using Unity, and all the 3D models are crafted by myself using Blender, ensuring a high level of accuracy and attention to detail. By immersing yourself in this simulation, you'll gain a deeper understanding of the mission's intricacies, the decisions made by the pilot, and the historical context of the event.</p>
+            <div class="slideshow-container" id="slideshow-container-game3">
+                <div class="slideshow">
+                    <img src="thereactorattackphotos/IMG_9871.PNG" alt="reactor Image 1" class="slide">
+                    <img src="thereactorattackphotos/IMG_9872.PNG" alt="reactor Image 2" class="slide">
+                    <img src="thereactorattackphotos/IMG_9873.PNG" alt="reactor Image 3" class="slide">
+                    <img src="thereactorattackphotos/IMG_9874.PNG" alt="reactor Image 4" class="slide">
+                    <img src="thereactorattackphotos/IMG_9875.PNG" alt="reactor Image 5" class="slide">
+                    <img src="thereactorattackphotos/IMG_9877.PNG" alt="reactor Image 6" class="slide">
+                    <img src="thereactorattackphotos/IMG_9878.PNG" alt="reactor Image 7" class="slide">
+                    <img src="thereactorattackphotos/IMG_9881.PNG" alt="reactor Image 8" class="slide">
+                    <img src="thereactorattackphotos/IMG_9882.PNG" alt="reactor Image 9" class="slide">
+                    <img src="thereactorattackphotos/IMG_9884.PNG" alt="reactor Image 10" class="slide">
+                   
+
+
+                </div>
+                <a class="prev prev-game3" onclick="prevSlideGame3()">&#10094;</a>
+                <a class="next next-game3" onclick="nextSlideGame3()">&#10095;</a>
+            </div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kQyChe7etYM" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
     </main>
 
     
@@ -520,22 +555,41 @@ function prevSlideGame2() {
 function nextSlideGame2() {
     showSlideGame2(currentSlideGame2 + 1);
 }
+function showSlideGame3(n) {
+    slidesGame3[currentSlideGame3].style.display = "none";
+    currentSlideGame3 = (n + slidesGame3.length) % slidesGame3.length;
+    slidesGame3[currentSlideGame3].style.display = "block";
+}
+
+function prevSlideGame3() {
+    showSlideGame3(currentSlideGame3 - 1);
+}
+
+function nextSlideGame3() {
+    showSlideGame3(currentSlideGame3 + 1);
+}
 
 // Initialize variables for both carousels
 let currentSlideGame1 = 0;
 const slidesGame1 = document.querySelectorAll("#slideshow-container-game1 .slide");
 let currentSlideGame2 = 0;
 const slidesGame2 = document.querySelectorAll("#slideshow-container-game2 .slide");
+let currentSlideGame3 = 0;
+const slidesGame3 = document.querySelectorAll("#slideshow-container-game3 .slide");
 
 // Add event listeners for prev and next buttons for each game's carousel
 document.querySelector(".prev-game1").addEventListener("click", prevSlideGame1);
 document.querySelector(".next-game1").addEventListener("click", nextSlideGame1);
 document.querySelector(".prev-game2").addEventListener("click", prevSlideGame2);
 document.querySelector(".next-game2").addEventListener("click", nextSlideGame2);
+document.querySelector(".prev-game3").addEventListener("click", prevSlideGame3);
+document.querySelector(".next-game3").addEventListener("click", nextSlideGame3);
 
 // Initialize the first slide for both carousels
 showSlideGame1(currentSlideGame1);
 showSlideGame2(currentSlideGame2);
+showSlideGame3(currentSlideGame3);
+
 
     </script>
     
